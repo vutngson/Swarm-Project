@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="65dp"
+    android:background="@drawable/list_site_selector"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="5dip">
+
+
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/folder" />
+
+    <TextView
+        android:id="@+id/list_site_address"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/list_image"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/list_image"
+        android:text="Address"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/list_site_district"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="District"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14dip"
+        android:layout_below="@+id/list_site_address"
+        android:layout_toRightOf="@+id/list_image"
+        android:layout_toEndOf="@+id/list_image" />
+
+
+</RelativeLayout>

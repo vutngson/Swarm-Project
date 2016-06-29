@@ -1,0 +1,2 @@
+CHANGED,/home/bb-gamie/AndroidStudioProjects/Android--How-to-start-FTP-in-Android-Demo-Project-master/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
+CHANGED,/home/bb-gamie/AndroidStudioProjects/Android--How-to-start-FTP-in-Android-Demo-Project-master/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/tagworld/ftptest/MyFTPClientFunctions$override.class

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/list_site" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_site"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|end"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/normalbutton"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@color/color_white"/>
+
+</android.support.design.widget.CoordinatorLayout>

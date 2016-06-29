@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="drawerArrowStyle">@style/MyDrawerArrowToggle</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <!-- ActionMode -->
+        <item name="actionModeStyle">@style/MyActionModeStyle</item>
+        <item name="actionModeCloseButtonStyle">@style/myclosebutton</item>
+
+    </style>
+
+    <style name="MyDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <!-- Setup the style of the ActionMode here -->
+    <style name="MyActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="background">@color/colorPrimary</item>
+        <item name="android:titleTextStyle">@style/MyActionModeTitle</item>
+        <item name="titleTextStyle">@style/MyActionModeTitle</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <!-- Setup the text style of the ActionMode here -->
+    <style name="MyActionModeTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="myclosebutton" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:tint">#ffffff</item> <!-- whatever color -->
+    </style>
+
+    <style name="ToolTipLayoutHoianStyle" parent="ToolTipLayoutDefaultStyle">
+        <item name="android:textAppearance">@style/ToolTipTextStyle</item>
+    </style>
+
+    <style name="ToolTipTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+</resources>

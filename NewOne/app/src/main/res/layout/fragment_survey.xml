@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/survey_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Site address in detail"
+        android:textSize="16dp" />
+
+
+    <EditText
+        android:id="@+id/survey_address_text"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/survey_address"
+        android:layout_alignStart="@+id/survey_address"
+        android:layout_below="@+id/survey_address"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:hint="Type here"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/survey_address_text"
+        android:layout_alignStart="@+id/survey_address_text"
+        android:layout_below="@+id/survey_address_text"
+        android:layout_marginTop="18dp"
+        android:text="Proper name (If exist e.g. Tran Quoc, Lotte)"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/survery_proper_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/survey_address_text"
+        android:layout_below="@+id/textView8"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:hint="Type here"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/survery_proper_name_text"
+        android:layout_alignStart="@+id/survery_proper_name_text"
+        android:layout_below="@+id/survery_proper_name_text"
+        android:layout_marginTop="18dp"
+        android:text="What is the type of the site:"
+        android:textSize="16dp" />
+
+    <RadioButton
+        android:id="@+id/site_villa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="4dp"
+        android:checked="false"
+        android:text="Villa"
+        android:textColor="@color/secondary_text" />
+
+    <RadioButton
+        android:id="@+id/site_street_house"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/site_villa"
+        android:layout_alignStart="@+id/site_villa"
+        android:layout_below="@+id/site_villa"
+        android:checked="false"
+        android:text="Street House"
+        android:textColor="@color/secondary_text" />
+
+    <RadioButton
+        android:id="@+id/site_building"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/site_street_house"
+        android:textColor="@color/secondary_text"
+        android:layout_alignStart="@+id/site_street_house"
+        android:layout_below="@+id/site_street_house"
+        android:checked="false"
+        android:text="Building" />
+
+    <RadioButton
+        android:id="@+id/site_pagoda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/site_street_house"
+        android:textColor="@color/secondary_text"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/survey_address"
+        android:layout_toRightOf="@+id/survey_address"
+        android:checked="false"
+        android:text="Pagoda or Temple" />
+
+    <RadioButton
+        android:id="@+id/site_rubbish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
+        android:layout_alignLeft="@+id/site_pagoda"
+        android:layout_alignStart="@+id/site_pagoda"
+        android:layout_below="@+id/site_pagoda"
+        android:checked="false"
+        android:text="Rubbish" />
+
+    <RadioButton
+        android:id="@+id/site_pond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
+        android:layout_alignLeft="@+id/site_rubbish"
+        android:layout_alignStart="@+id/site_rubbish"
+        android:layout_below="@+id/site_rubbish"
+        android:checked="false"
+        android:text="Pond" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="What is the number of floor :"
+        android:textSize="16dp"
+        android:layout_below="@+id/site_building"
+        android:layout_alignLeft="@+id/site_building"
+        android:layout_alignStart="@+id/site_building" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of floor :"
+        android:layout_marginTop="11dp"
+        android:textSize="13dp"
+        android:layout_below="@+id/textView10"
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10" />
+
+    <EditText
+        android:id="@+id/survey_number_of_floor"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/border"
+        android:hint="Type here"
+        android:inputType="textMultiLine"
+        android:lines="1"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textSize="11dp"
+        android:layout_below="@+id/textView10"
+        android:layout_toRightOf="@+id/site_street_house"
+        android:layout_alignRight="@+id/survey_address"
+        android:layout_alignEnd="@+id/survey_address" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is the status of construction site: "
+        android:layout_marginTop="15dp"
+        android:textSize="16dp"
+        android:layout_below="@+id/survey_number_of_floor"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/textView12"
+        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
+            android:text="In Progress"
+            android:id="@+id/survey_in_progress"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
+            android:text="Suspended"
+            android:id="@+id/survey_suspended"
+            android:checked="false" />
+    </RadioGroup>
+
+
+</RelativeLayout>

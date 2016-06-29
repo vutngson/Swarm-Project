@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/survey_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Recording Site Type"
+        android:textSize="20dp"
+        android:textColor="@color/secondary_text"/>
+
+    <TextView
+        android:id="@+id/text_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/survey_address"
+        android:layout_alignStart="@+id/survey_address"
+        android:layout_below="@+id/survey_address"
+        android:layout_marginTop="5dp"
+        android:text="What you should say: "
+        android:textSize="17dp"
+        android:textColor="@color/secondary_text"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="270dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/text_file_exist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/border_seekbar"
+        android:thumb="@drawable/thumb_seekbar" />
+
+    <ImageButton
+        android:id="@+id/button_record_fragment_play"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/button_record_fragment_pause"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/ic_play_arrow_white_36dp" />
+
+    <ImageButton
+        android:id="@+id/button_record_fragment_pause"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/button_record_fragment_play"
+        android:layout_alignStart="@+id/button_record_fragment_play"
+        android:layout_below="@+id/seekBar"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/ic_pause_white_36dp" />
+
+
+    <ImageButton
+        android:id="@+id/button_record_fragment_replay"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/button_record_fragment_play"
+        android:layout_toEndOf="@+id/button_record_fragment_record_clean"
+        android:layout_toRightOf="@+id/button_record_fragment_record_clean"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/ic_replay_white_24dp" />
+
+    <ImageButton
+        android:id="@+id/button_record_fragment_stop"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/button_record_fragment_replay"
+        android:layout_toLeftOf="@+id/button_record_fragment_record_done"
+        android:layout_toStartOf="@+id/button_record_fragment_record_done"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/ic_stop_white_24dp" />
+
+    <ImageButton
+        android:id="@+id/button_record_fragment_record"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/button_record_fragment_record_stop"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_button"
+        android:src="@drawable/ic_mic_white_36dp" />
+
+    <ImageButton
+        android:id="@+id/button_record_fragment_record_stop"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/button_record_fragment_record"
+        android:layout_alignStart="@+id/button_record_fragment_record"
+        android:layout_below="@+id/text_help"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/ic_stop_white_36dp" />
+
+    <Button
+        android:id="@+id/button_record_fragment_record_clean"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/button_record_fragment_record"
+        android:layout_alignLeft="@+id/seekBar"
+        android:layout_alignStart="@+id/seekBar"
+        android:background="@drawable/ic_clear_black_24dp"
+        android:backgroundTint="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/button_record_fragment_record_done"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/button_record_fragment_record"
+        android:layout_alignEnd="@+id/seekBar"
+        android:layout_alignRight="@+id/seekBar"
+        android:background="@drawable/ic_done_black_24dp"
+        android:backgroundTint="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/button_type_help"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/survey_address"
+        android:layout_marginLeft="2dp"
+        android:layout_toEndOf="@+id/text_help"
+        android:layout_toRightOf="@+id/text_help"
+        android:background="@drawable/ic_help_black_24dp"
+        android:backgroundTint="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/text_file_exist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_help"
+        android:layout_alignStart="@+id/text_help"
+        android:layout_below="@+id/button_record_fragment_record_clean"
+        android:layout_marginTop="41dp"
+        android:paddingTop="6dp"
+        android:text="There is a recoding file"
+        android:textSize="16dp"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/button_delete_file"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/text_file_exist"
+        android:layout_toRightOf="@+id/text_file_exist"
+        android:background="@drawable/ic_delete_black_24dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginLeft="5dp"
+        android:visibility="invisible"/>
+
+
+</RelativeLayout>

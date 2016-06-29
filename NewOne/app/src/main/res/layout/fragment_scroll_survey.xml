@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:isScrollContainer="false">
+
+    <RelativeLayout
+        android:id="@+id/survey_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            >
+
+
+            <TextView
+                android:id="@+id/survey_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Site address in detail"
+                android:textSize="20dp" />
+
+
+            <EditText
+                android:id="@+id/survey_address_text"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/survey_address"
+                android:layout_alignStart="@+id/survey_address"
+                android:layout_below="@+id/survey_address"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/survey_address_text"
+                android:layout_alignStart="@+id/survey_address_text"
+                android:layout_below="@+id/survey_address_text"
+                android:layout_marginTop="18dp"
+                android:text="Proper name (If exist e.g. Tran Quoc, Lotte)"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/survery_proper_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/survey_address_text"
+                android:layout_below="@+id/textView8"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="19dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/survery_proper_name_text"
+                android:layout_alignStart="@+id/survery_proper_name_text"
+                android:layout_below="@+id/survery_proper_name_text"
+                android:layout_marginTop="18dp"
+                android:text="What is the type of the site:"
+                android:textSize="20dp" />
+
+            <vn.edu.usth.swarmapplicationuiprototype3.FunctionSurvey.RelativeRadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/survery_proper_name_text"
+                android:layout_alignLeft="@+id/textView9"
+                android:layout_alignRight="@+id/survery_proper_name_text"
+                android:layout_alignStart="@+id/textView9"
+                android:layout_below="@+id/textView9">
+
+                <RadioButton
+                    android:id="@+id/site_villa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView9"
+                    android:layout_alignStart="@+id/textView9"
+                    android:layout_below="@+id/textView9"
+                    android:layout_marginTop="20dp"
+                    android:checked="false"
+                    android:text="Villa"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/site_pagoda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/site_villa"
+                    android:layout_toEndOf="@+id/site_street_house"
+                    android:layout_toRightOf="@+id/site_street_house"
+                    android:checked="false"
+                    android:text="Pagoda or Temple"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+
+                <RadioButton
+                    android:id="@+id/site_street_house"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/site_villa"
+                    android:layout_alignStart="@+id/site_villa"
+                    android:layout_below="@+id/site_villa"
+                    android:checked="false"
+                    android:text="Street House"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/site_rubbish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/site_pagoda"
+                    android:layout_alignStart="@+id/site_pagoda"
+                    android:layout_below="@+id/site_pagoda"
+                    android:checked="false"
+                    android:text="Rubbish"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/site_building"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/site_street_house"
+                    android:layout_alignStart="@+id/site_street_house"
+                    android:layout_below="@+id/site_street_house"
+                    android:checked="false"
+                    android:text="Building"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+
+                <RadioButton
+                    android:id="@+id/site_pond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/site_rubbish"
+                    android:layout_alignStart="@+id/site_rubbish"
+                    android:layout_below="@+id/site_rubbish"
+                    android:checked="false"
+                    android:text="Pond"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+
+            </vn.edu.usth.swarmapplicationuiprototype3.FunctionSurvey.RelativeRadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:focusableInTouchMode="true"
+
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/layout1">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="What is the number of floor :"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView10"
+                android:layout_alignStart="@+id/textView10"
+                android:layout_below="@+id/textView10"
+                android:layout_marginTop="11dp"
+                android:text="Number of floor :"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/survey_number_of_floor"
+                android:layout_width="100dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView11"
+                android:layout_alignStart="@+id/textView11"
+                android:layout_below="@+id/textView11"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView11"
+                android:layout_alignStart="@+id/textView11"
+                android:layout_below="@+id/survey_number_of_floor"
+                android:layout_marginTop="20dp"
+                android:text="What is the status of construction site: "
+                android:textSize="20dp" />
+
+            <RadioGroup
+                android:id="@+id/survey_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView12"
+                android:layout_alignStart="@+id/textView12"
+                android:layout_below="@+id/textView12"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/survey_in_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="In Progress"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/survey_suspended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:checked="false"
+                    android:text="Suspended"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+
+            android:layout_below="@+id/layout2">
+
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Where are workers (no Hanoian) from? (just ask one representative)"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView17"
+                android:layout_alignStart="@+id/textView17"
+                android:layout_below="@+id/textView17"
+                android:layout_marginTop="11dp"
+                android:text="Province:"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/worker_province"
+                android:layout_width="130dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView18"
+                android:layout_alignStart="@+id/textView18"
+                android:layout_below="@+id/textView18"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView18"
+                android:layout_alignStart="@+id/textView18"
+                android:layout_below="@+id/worker_province"
+                android:layout_marginTop="30dp"
+                android:text="Do workers live on the site?"
+                android:textSize="20dp" />
+
+            <RadioGroup
+                android:id="@+id/survey_temporary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView19"
+                android:layout_alignStart="@+id/textView19"
+                android:layout_below="@+id/textView19"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/worker_live_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/worker_live_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/worker_province"
+                android:layout_marginLeft="38dp"
+                android:layout_marginStart="38dp"
+                android:layout_toEndOf="@+id/worker_province"
+                android:layout_toRightOf="@+id/worker_province"
+                android:text="District"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/worker_district"
+                android:layout_width="150dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView"
+                android:layout_alignStart="@+id/textView"
+                android:layout_alignTop="@+id/worker_province"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout4"
+            android:layout_width="match_parent"
+            android:focusableInTouchMode="true"
+
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout3">
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Workers live on the site"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView40"
+                android:layout_alignStart="@+id/textView40"
+                android:layout_below="@+id/textView40"
+                android:layout_marginTop="11dp"
+                android:text="Number of workers:"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/number_of_worker"
+                android:layout_width="130dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView41"
+                android:layout_alignStart="@+id/textView41"
+                android:layout_below="@+id/textView41"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/number_of_worker"
+                android:layout_alignStart="@+id/number_of_worker"
+                android:layout_below="@+id/number_of_worker"
+                android:layout_marginTop="20dp"
+                android:text="Number of drying clothes outside:"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/number_of_cloths_outside"
+                android:layout_width="130dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView42"
+                android:layout_alignStart="@+id/textView42"
+                android:layout_below="@+id/textView42"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+
+            android:layout_below="@+id/layout4">
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Workers do not live on the site. Where do they live in Hanoi?
+( just ask one representative)"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView50"
+                android:layout_alignStart="@+id/textView50"
+                android:layout_below="@+id/textView50"
+                android:layout_marginTop="11dp"
+                android:text="Street:"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/worker_live_street"
+                android:layout_width="130dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView51"
+                android:layout_alignStart="@+id/textView51"
+                android:layout_below="@+id/textView51"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/worker_live_street"
+                android:layout_alignStart="@+id/worker_live_street"
+                android:layout_below="@+id/worker_live_street"
+                android:layout_marginTop="20dp"
+                android:text="District"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/worker_live_district"
+                android:layout_width="130dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView52"
+                android:layout_alignStart="@+id/textView52"
+                android:layout_below="@+id/textView52"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:layout_below="@+id/layout5">
+
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="How many boxes, pots, etc.... are there :"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView13"
+                android:layout_alignStart="@+id/textView13"
+                android:layout_below="@+id/textView13"
+                android:layout_marginTop="11dp"
+                android:text="Number:"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/survey_number_of_box"
+                android:layout_width="100dp"
+                android:layout_height="44dp"
+                android:layout_alignLeft="@+id/textView14"
+                android:layout_alignStart="@+id/textView14"
+                android:layout_below="@+id/textView14"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="1"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView14"
+                android:layout_alignStart="@+id/textView14"
+                android:layout_below="@+id/survey_number_of_box"
+                android:layout_marginTop="20dp"
+                android:text="Are there any temporary open still clean water?"
+                android:textSize="20dp" />
+
+            <RadioGroup
+                android:id="@+id/survey_temporary_open_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView15"
+                android:layout_alignStart="@+id/textView15"
+                android:layout_below="@+id/textView15"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/water_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/water_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView14"
+                android:layout_alignStart="@+id/textView14"
+                android:layout_below="@+id/survey_temporary_open_water"
+                android:layout_marginTop="20dp"
+                android:text="Are there any larvae?"
+                android:textSize="20dp" />
+
+            <RadioGroup
+                android:id="@+id/survey_larvae"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView16"
+                android:layout_alignStart="@+id/textView16"
+                android:layout_below="@+id/textView16"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/larvae_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/larvae_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="18dp" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout7"
+            android:layout_width="match_parent"
+            android:focusableInTouchMode="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout6">
+
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Comment"
+                android:textSize="20dp" />
+
+
+            <EditText
+                android:id="@+id/survey_comment_further"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView30"
+                android:layout_alignStart="@+id/textView30"
+                android:layout_below="@+id/textView30"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:hint="Type here"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:layout_marginBottom="20dp"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

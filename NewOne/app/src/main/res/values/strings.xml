@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Swarm Application UI Prototype 3</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Home</item>
+        <item >Find People</item>
+        <item >Photos</item>
+        <item >Communities</item>
+        <item >Pages</item>
+        <item >What\'s Hot</item>
+    </string-array>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_home_white_24dp</item>
+        <item>@drawable/ic_list_white_24dp</item>
+        <item>@drawable/ic_sentiment_dissatisfied_white_24dp</item>
+    </array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+    <string name="address_string_help">"The site address is &lt; address &gt;"</string>
+
+    <string name="comment_string_help"><![CDATA["Workers live OR do not live on the site. There are &lt; number &gt; workers. Worker are from &lt; province &gt; "
+                                        "<br/>"
+                                        "There are &lt; number &gt; of boxes, pots, etc."
+                                        "<br/>"
+                                        " There is OR is no clean water. There is OR is no larvae";]]></string>
+
+
+    <string name="type_string_help"><![CDATA[It &#769;s the &lt; type of the site &gt; with &lt; Proper name if exist e.g. Lotter, Tran Quoc &gt;
+                                        <br/>  OR <br/>
+                                        It &#769;s a &lt; size &gt; &lt; type of the site &gt; with &lt; number of floor &gt;]]></string>
+
+    <string name="help_survey">"The site address is &lt; address &gt;"</string>
+
+    <string name="help_record">"The site address is &lt; address &gt;"</string>
+    <string name="help_photo">"The site address is &lt; address &gt;"</string>
+    <string name="help_script">"The site address is &lt; address &gt;"</string>
+
+
+
+</resources>
