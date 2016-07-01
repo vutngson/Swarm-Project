@@ -82,10 +82,12 @@ public class MapFragment extends Fragment {
     private ImageButton imageButtonNewSite;
     private String siteAddress;
     private JSONArray jsonArray;
-
-
     private Snackbar snackbarRecord;
     private ItemizedIconOverlay.OnItemGestureListener<OverlayItem> onItemGestureListener;
+    private int activeSite;
+
+    public MapFragment() {
+    }
 
     public MapFragment(Context context) {
         this.context = context;
@@ -142,6 +144,17 @@ public class MapFragment extends Fragment {
                             json_data.getString("id"), new GeoPoint(
                             json_data.getDouble("lat"),
                             json_data.getDouble("lon"))));
+                    try {
+                        if(json_data.getString("id").equals(AppConstant.readFileID())){
+
+                            activeSite = i;
+                            Log.i("ActiveSite", activeSite +"");
+                            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(json_data.getString("address"));
+
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -149,15 +162,6 @@ public class MapFragment extends Fragment {
             }
         }
 
-        try {
-            String id = AppConstant.readFileID();
-            if (id != null)
-                Log.i("ReadID", id);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
         onItemGestureListener =  new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
             @Override
@@ -169,16 +173,13 @@ public class MapFragment extends Fragment {
                 try {
                     updateActiveFile(item.getSnippet(), item.getPoint(), item.getTitle());
                     ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(item.getTitle());
-                    String id = AppConstant.readFileID();
+                    Log.i("ActivePress", index + "");
                     snackbarRecord = Snackbar.make(relativeLayout, item.getTitle() + " is selected", Snackbar.LENGTH_SHORT);
                     snackbarRecord.show();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
-
 
                 return false;
             }
@@ -195,6 +196,7 @@ public class MapFragment extends Fragment {
 
 
         anotherItemizedIconOverlay.setFocusItemsOnTap(true);
+        anotherItemizedIconOverlay.setFocusedItem(activeSite + 1);
 
         mapView.getOverlays().add(anotherItemizedIconOverlay);
         mapView.invalidate();
@@ -204,46 +206,14 @@ public class MapFragment extends Fragment {
         ScaleBarOverlay myScaleBarOverlay = new ScaleBarOverlay(mapView);
         mapView.getOverlays().add(myScaleBarOverlay);
 
-        IMyLocationConsumer iMyLocationConsumer = new IMyLocationConsumer() {
-            @Override
-            public void onLocationChanged(Location location, IMyLocationProvider source) {
-//source//                ResourceProxyImpl mResourceProxy = new ResourceProxyImpl(context);
-////                int lat = (int) (location.getLatitude());
-////                int lng = (int) (location.getLongitude());
-////                if (mMyLocationOverlay == null) {
-////                    final ArrayList<OverlayItem> items = new ArrayList<>();
-////                    items.add(new OverlayItem("Current Location", " ",
-////                            new GeoPoint(location)));
-////
-////                    mMyLocationOverlay = new ItemizedOverlayWithFocus<>(items,
-////                            new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
-////                                @Override
-////                                public boolean onItemSingleTapUp(final int index, final OverlayItem item) {
-////
-////                                    return true;
-////                                }
-////
-////                                @Override
-////                                public boolean onItemLongPress(final int index, final OverlayItem item) {
-////                                    return false;
-////                                }
-////                            }, mResourceProxy);
-////
-//////                    mMyLocationOverlay.setFocusItemsOnTap(true);
-//////                    mMyLocationOverlay.setFocusedItem(0);
-////                    mapView.getOverlays().add(mMyLocationOverlay);
-////                    mapView.invalidate();
-////                }
-////
-////            }
-
-            }
-
-        };
-
         gpsMyLocationProvider = new GpsMyLocationProvider(getContext());
         gpsMyLocationProvider.setLocationUpdateMinTime(20);
-        gpsMyLocationProvider.startLocationProvider(iMyLocationConsumer);
+        gpsMyLocationProvider.startLocationProvider(new IMyLocationConsumer() {
+            @Override
+            public void onLocationChanged(Location location, IMyLocationProvider source) {
+
+            }
+        });
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -286,6 +256,10 @@ public class MapFragment extends Fragment {
                                     location,
                                     currentLocation.getLatitude(),
                                     currentLocation.getLongitude());
+                            updateActiveFile(id, geoPoint, location);
+                            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(location);
+                            snackbarRecord = Snackbar.make(relativeLayout, location + " is selected", Snackbar.LENGTH_SHORT);
+                            snackbarRecord.show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
@@ -304,6 +278,7 @@ public class MapFragment extends Fragment {
                         mapView.getController().setZoom(17);
                         mapView.getController().animateTo(geoPoint);
                         mapView.invalidate();
+
                     } else {
                         Toast.makeText(getContext(), "Unable to get location at this time", Toast.LENGTH_SHORT).show();
                     }

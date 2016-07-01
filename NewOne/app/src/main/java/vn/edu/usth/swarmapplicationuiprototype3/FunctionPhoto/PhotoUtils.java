@@ -76,12 +76,12 @@ public class PhotoUtils {
                     }
                 }
             } else {
-                // image directory is empty
-                Toast.makeText(
-                        _context,
-                        getFileFolder()
-                                + " is empty!!!",
-                        Toast.LENGTH_LONG).show();
+//                // image directory is empty
+//                Toast.makeText(
+//                        _context,
+//                        getFileFolder()
+//                                + " is empty!!!",
+//                        Toast.LENGTH_LONG).show();
             }
 
         } else {

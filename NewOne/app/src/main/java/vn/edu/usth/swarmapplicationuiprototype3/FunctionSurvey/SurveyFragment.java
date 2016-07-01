@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.method.TextKeyListener;
 import android.util.Log;
@@ -433,6 +434,7 @@ public class SurveyFragment extends Fragment implements View.OnClickListener {
             Feature feature = new Feature(gJSOn.toJSON());
             jsonOb = feature.getProperties();
             readEditText("address", SurveyAddress, jsonOb);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(AppConstant.readFileAddress());
             readEditText("propername", SurveyProperName, jsonOb);
             if (jsonOb.has("type")) {
                 if (jsonOb.getString("type").equals(siteVilla.getText().toString())) {
