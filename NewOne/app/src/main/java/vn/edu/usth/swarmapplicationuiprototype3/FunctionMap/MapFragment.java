@@ -196,6 +196,7 @@ public class MapFragment extends Fragment {
 
 
         anotherItemizedIconOverlay.setFocusItemsOnTap(true);
+        if (activeSite != 0)
         anotherItemizedIconOverlay.setFocusedItem(activeSite + 1);
 
         mapView.getOverlays().add(anotherItemizedIconOverlay);
